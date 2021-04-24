@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kb.twitter.entity.Tweet;
 import com.kb.twitter.service.TweetService;
+import com.kb.twitter.web.client.CommentClient;
+import com.kb.twitter.web.model.CommentModel;
 import com.kb.twitter.web.model.TweetModel;
 
 import lombok.AllArgsConstructor;
@@ -25,8 +27,8 @@ import lombok.AllArgsConstructor;
 public class TweetController {
 
 	private TweetService service;
-
 	private ModelMapper mapper;
+	private CommentClient commentService;
 
 	@GetMapping
 	public List<TweetModel> get() {
@@ -57,6 +59,11 @@ public class TweetController {
 	@DeleteMapping("{id}")
 	public void delete(@PathVariable Long id) {
 		service.delete(id);
+	}
+	
+	@GetMapping("{id}/comments")
+	public List<CommentModel> getComments(@PathVariable Long id) {
+		return commentService.getComments(id);
 	}
 
 }
