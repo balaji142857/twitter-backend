@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kb.twitter.entity.Tweet;
-import com.kb.twitter.model.TweetModel;
 import com.kb.twitter.service.TweetService;
+import com.kb.twitter.web.model.TweetModel;
 
 import lombok.AllArgsConstructor;
 

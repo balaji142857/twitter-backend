@@ -1,4 +1,4 @@
-package com.kb.twitter.model;
+package com.kb.twitter.web.model;
 
 import java.util.Date;
 
