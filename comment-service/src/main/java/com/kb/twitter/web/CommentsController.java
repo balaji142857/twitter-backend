@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kb.twitter.entity.Comment;
-import com.kb.twitter.model.CommentModel;
 import com.kb.twitter.service.CommentService;
+import com.kb.twitter.web.model.CommentModel;
 
 import lombok.AllArgsConstructor;
 
