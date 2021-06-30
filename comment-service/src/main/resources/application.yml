@@ -1,22 +1,16 @@
+server:
+  port: 0
 spring:
-  datasource:
-    platform: postgres
-    url: jdbc:postgresql://172.20.0.2:5432/test_db
-    username: root
-    password: root
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    database: POSTGRESQL
-    hibernate:
-      ddl-auto: create-drop
-    properties:
-      org:
-        hibernate:
-          jdbc:
-            time_zone: UTC
+  profiles:
+    active:
+    - qua
   application:
     name: comment-service
+  config:
+    import: optional:configserver:http://localhost:8888/
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}-${random.value}
