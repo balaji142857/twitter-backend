@@ -6,3 +6,5 @@ eureka:
     fetch-registry: false
   server:
     enable-self-preservation: false
+logging:
+  file: /home/balaji142857/logs/twitter/discovery.log

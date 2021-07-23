@@ -8,9 +8,21 @@ spring:
     name: comment-service
   config:
     import: optional:configserver:http://localhost:8888/
+  kafka:
+    consumer:
+        bootstrap-servers: localhost:9092
+        group-id: group_id
+        auto-offset-reset: earliest
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
     instance-id: ${spring.application.name}-${random.value}
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: *
