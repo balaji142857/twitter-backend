@@ -1,26 +1,26 @@
 package com.kb.twitter.entity;
 
-import java.util.Date;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-import org.springframework.data.annotation.CreatedDate;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@Document(collection = "tweets")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Tweet {
 	
 	@Id
-	@GeneratedValue
-	private Long id;
-	private Long author;
-	private String tweet;
-	@CreatedDate
-	private Date createdDate;
-//	private TweetMetadata metadata;
+	private String id;
+	private String authorId;
+	private String tweetMessage;
+	private Long likes;
+	private Long retweets;
+	private Long quotes;
 
 }

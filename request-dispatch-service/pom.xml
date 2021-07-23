@@ -9,22 +9,55 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kb.twitter</groupId>
-	<artifactId>config</artifactId>
+	<artifactId>request-dispatch-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>config</name>
-	<description>Twitter config server</description>
+	<name>request-dispatch-service</name>
+	<description>Request dispatcher service</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.2</spring-cloud.version>
 	</properties>
-	<dependencies>		
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.kb.twitter</groupId>
+			<artifactId>web-model</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-		</dependency>				
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -56,5 +89,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

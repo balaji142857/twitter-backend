@@ -11,7 +11,10 @@ import com.kb.twitter.web.model.CommentModel;
 @FeignClient("comment-service")
 public interface CommentClient {
 
-	@GetMapping("comments")
-	public List<CommentModel> getComments(@RequestParam("tweetId") Long id);
+//	@GetMapping("comments")
+//	public List<CommentModel> getComments(@RequestParam("tweetId") Long id);
+	
+	@GetMapping("comments/test")
+	public Long getComments();
 	
 }
